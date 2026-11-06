@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            background: white;
+            width: 300px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            box-sizing: border-box;
+            padding: 10px;
+            width: 80%;
+            margin: 15px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 25px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>OTP Verification</h2>
+        <p>Enter your 4-digit OTP</p>
+
+        <input
+            type="text"
+            id="otp"
+            maxlength="4"
+            inputmode="numeric"
+            placeholder="Enter OTP"
+            aria-label="Enter your 4-digit OTP"
+        >
+
+        <br>
+        <button onclick="verifyOTP()">Verify</button>
+        <p id="result" aria-live="polite"></p>
+    </div>
+
+    <script>
+        function verifyOTP() {
+            const otp = document.getElementById("otp").value;
+            const result = document.getElementById("result");
+
+            if (otp === "1234") {
+                result.textContent = "Verified";
+                result.style.color = "green";
+            } else {
+                result.textContent = "Wrong OTP";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
